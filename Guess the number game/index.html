@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess the Number</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Guess the Number Game</h1>
+    <p>Guess a number between 1 and 100:</p>
+    <input type="number" id="guessInput" />
+    <button onclick="checkGuess()">Guess</button>
+    <p id="message"></p>
+    <script>
+      let secretNumber;
+      let roundsWon = 0;
+      const maxRounds = 10;
+
+      function startNewRound() {
+        secretNumber = Math.floor(Math.random() * 100) + 1;
+      }
+
+      function checkGuess() {
+        const guess = parseInt(document.getElementById("guessInput").value);
+        if (isNaN(guess) || guess < 1 || guess > 100) {
+          setMessage("Please enter a valid number between 1 and 100.");
+          return;
+        }
+
+        if (guess === secretNumber) {
+          roundsWon++;
+          setMessage("Congratulations! You guessed the correct number.");
+        } else {
+          setMessage(`Wrong guess. The correct number was ${secretNumber}.`);
+        }
+
+        if (roundsWon === 3) {
+          endGame("win");
+        } else if (maxRounds - roundsWon === 0) {
+          endGame("lose");
+        } else {
+          startNewRound();
+        }
+      }
+
+      function setMessage(message) {
+        document.getElementById("message").textContent = message;
+      }
+
+      function endGame(outcome) {
+        if (outcome === "win") {
+          setMessage(
+            `You won the game! You guessed correctly in ${roundsWon} out of ${maxRounds} rounds.`
+          );
+        } else {
+          setMessage(
+            `Game over. You lost. You guessed correctly in ${roundsWon} out of ${maxRounds} rounds.`
+          );
+        }
+        document
+          .getElementById("guessInput")
+          .setAttribute("disabled", "disabled");
+        document.querySelector("button").setAttribute("disabled", "disabled");
+      }
+
+      startNewRound();
+    </script>
+  </body>
+</html>
