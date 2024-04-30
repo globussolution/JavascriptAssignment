@@ -9,6 +9,13 @@
         font-family: Arial, sans-serif;
         text-align: center;
       }
+      #guessInput {
+        height: 30px;
+        width: 250px;
+        border-radius: 5px;
+        /* border: none; */
+        /* border-color: transparent; */
+      }
     </style>
   </head>
   <body>
@@ -20,10 +27,12 @@
     <script>
       let secretNumber;
       let roundsWon = 0;
+      let currentRound = 0;
       const maxRounds = 10;
 
       function startNewRound() {
         secretNumber = Math.floor(Math.random() * 100) + 1;
+        currentRound++;
       }
 
       function checkGuess() {
@@ -42,7 +51,7 @@
 
         if (roundsWon === 3) {
           endGame("win");
-        } else if (maxRounds - roundsWon === 0) {
+        } else if (currentRound === maxRounds) {
           endGame("lose");
         } else {
           startNewRound();
@@ -72,4 +81,5 @@
       startNewRound();
     </script>
   </body>
-</html>
+
+      
