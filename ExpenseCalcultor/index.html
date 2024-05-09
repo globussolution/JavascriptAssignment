@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Expense Calculator</title>
+  </head>
+  <body>
+    <div class="box">
+      <h1>Expense Calculator</h1>
+      <div class="innerBox">
+        <!-- <input type="text" id="amount" placeholder="Enter the Amount" />
+        <button onclick="calculateExpense()">Expense</button>
+        <button onclick="income()">Income</button>
+        <h4 id="showSalary"></h4>
+        <h4 id="totalExpenses"></h4>
+        <h4 id="showResult"></h4> -->
+        <label for="transaction">Enter Amount:</label><br />
+        <input type="number" id="transaction" /><br />
+        <button onclick="addTransaction('expense')">Expense</button>
+        <button onclick="addTransaction('income')">Income</button><br /><br />
+
+        <div id="results">
+          <strong>Savings:</strong> <span id="savings">0</span><br />
+          <strong>Total Income:</strong> <span id="totalIncome">0</span><br />
+          <strong>Total Expenses:</strong> <span id="totalExpenses">0</span
+          ><br />
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
