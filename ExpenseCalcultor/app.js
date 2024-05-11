@@ -49,7 +49,8 @@ let totalExpenses = 0;
 // }
 
 function addTransaction(type) {
-  const amount = parseFloat(document.getElementById("transaction").value);
+  const amountInput = document.getElementById("transaction");
+  const amount = parseFloat(amountInput.value);
   if (!isNaN(amount)) {
     if (type === "income") {
       totalIncome += amount;
@@ -60,7 +61,7 @@ function addTransaction(type) {
     document.getElementById("totalExpenses").textContent =
       totalExpenses.toFixed(2);
     calculateSavings();
-    number.value = ""; // Clear the input field
+    amountInput.value = ""; // Clear the input field
   }
 }
 
