@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter Application</title>
+    <style>
+      /* @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap"); */
+      body {
+        /* width: 100vh;
+        font-family: "Orbitron", sans-serif;
+*/
+        font-style: normal;
+        font-size: 1.2em;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-image: linear-gradient(
+          to right top,
+          #051937,
+          #004d7a,
+          #008793,
+          #00bf72,
+          #a8eb12
+        );
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: #051937;
+      }
+      .counter-box {
+        margin: 50px;
+        padding-top: 50px;
+        /* border: 1px solid red; */
+      }
+      #counter {
+        font-size: 36px;
+        margin-bottom: 20px;
+        transition: color 0.3s ease;
+        color: #051937;
+      }
+      #history {
+        margin-bottom: 20px;
+        color: #051937;
+      }
+      button {
+        font-size: 18px;
+        padding: 10px 20px;
+        margin: 5px;
+        background-color: #a8eb12;
+        border-color: transparent;
+        border-radius: 30px;
+        color: #051937;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="counter-box">
+      <div id="counter">0</div>
+      <div id="counter-status"></div>
+      <div id="history">History:</div>
+      <button onclick="incrementCounter()">Increment</button>
+      <button onclick="decrementCounter()">Decrement</button>
+      <button onclick="resetCounter()">Reset</button>
+    </div>
+
+    <script>
+      let counter = 0;
+      const counterElement = document.getElementById("counter");
+      const counterStatusElement = document.getElementById("counter-status");
+      const historyElement = document.getElementById("history");
+
+      function updateCounterDisplay() {
+        counterElement.textContent = counter;
+        counterStatusElement.textContent = counter % 2 === 0 ? "Even" : "Odd";
+        counterElement.style.color = counter % 2 === 0 ? "green" : "red";
+        historyElement.textContent += counter + ", ";
+      }
+
+      function incrementCounter() {
+        counter++;
+        updateCounterDisplay();
+      }
+
+      function decrementCounter() {
+        if (counter > 0) {
+          counter--;
+          updateCounterDisplay();
+        }
+      }
+
+      function resetCounter() {
+        counter = 0;
+        updateCounterDisplay();
+        historyElement.textContent = "History: ";
+      }
+    </script>
+  </body>
+</html>
