@@ -1,0 +1,28 @@
+body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  display: flex;
+}
+
+.icon {
+  font-size: 100px;
+  color: white;
+  margin: 20px;
+  cursor: pointer;
+}
+
+#power-button.on {
+  color: green;
+}
+
+#light-bulb.on {
+  color: yellow;
+}
