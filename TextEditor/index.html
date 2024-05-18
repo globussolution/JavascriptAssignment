@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Text Editor</title>
+  </head>
+  <body>
+    <div>
+      <div class="toolbar">
+        <button onclick="bold()">Bold</button>
+        <button onclick="italic()">Italic</button>
+        <button onclick="underline()">Underline</button>
+        <input type="number" id="fontsize" onchange="fontSize()" />
+
+        <!-- <button onclick="fontSize()">Font Size</button> -->
+        <!-- <select name="" id="fontSize" onchange="fontSize()">
+                <option value="32px">32</option>
+                <option value="42px">42</option>
+                <option value="36px">36</option>
+                <option value="40px">40</option>
+            </select> -->
+        <!-- <button onclick="fontFamily()">Font Family</button> -->
+        <select name="" id="fontFamily" onchange="fontFamily()">
+          <option value="Arial">Arial</option>
+          <option value="Verdana">Verdana</option>
+          <option value="Times New Roman">Times New Roman</option>
+          <option value="Courier New">Courier New</option>
+        </select>
+        <!-- <button onclick="chnageColor()">Color</button> -->
+        <input
+          type="color"
+          pattern=""
+          onchange="chnageColor()"
+          id="colorpicker"
+        />
+      </div>
+      <textarea
+        id="editor"
+        cols="70"
+        rows="20"
+        placeholder="Write something here"
+      ></textarea>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
