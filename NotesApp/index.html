@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes App</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        width: 300px;
+        margin: 50px auto;
+      }
+      .login-form,
+      .home,
+      .admin-view {
+        display: none;
+      }
+      .note {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px 0;
+      }
+      .note-user {
+        font-size: 0.8em;
+        color: #888;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="login-form">
+        <h2>Login</h2>
+        <input type="email" id="email" placeholder="Email" /><br /><br />
+        <input
+          type="password"
+          id="password"
+          placeholder="Password"
+        /><br /><br />
+        <button id="loginButton">Login</button>
+      </div>
+
+      <div class="home">
+        <h2>Welcome, <span id="user-email"></span></h2>
+        <textarea id="note" placeholder="Enter your note here"></textarea
+        ><br /><br />
+        <button id="addNoteButton">Add Note</button>
+        <button id="logoutButton">Logout</button>
+        <div id="notes"></div>
+      </div>
+
+      <div class="admin-view">
+        <h2>Admin View</h2>
+        <div id="all-notes"></div>
+        <button id="adminLogoutButton">Logout</button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
