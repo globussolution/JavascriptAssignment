@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const loginForm = document.querySelector(".login-form");
+  const notes_info = document.querySelector(".notes-info");
   const home = document.querySelector(".home");
   const adminView = document.querySelector(".admin-view");
   const userEmailDisplay = document.getElementById("user-email");
@@ -51,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
       currentUser = email;
       userEmailDisplay.innerText = email;
       loginForm.style.display = "none";
+      notes_info.style.display = "none";
       home.style.display = "block";
       displayNotes();
     } else {
@@ -74,6 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("logoutButton").onclick = function () {
     currentUser = null;
     loginForm.style.display = "block";
+    notes_info.style.display = "block";
     home.style.display = "none";
   };
 
