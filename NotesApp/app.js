@@ -43,9 +43,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    if (email === "admin@notes.com" && password) {
+    if (email === "admin@notes.com") {
       currentUser = email;
       loginForm.style.display = "none";
+      notes_info.style.display = "none";
       adminView.style.display = "block";
       displayAllNotes();
     } else if (email && password) {
@@ -83,6 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("adminLogoutButton").onclick = function () {
     currentUser = null;
     loginForm.style.display = "block";
+    notes_info.style.display = "block";
     adminView.style.display = "none";
   };
 });
